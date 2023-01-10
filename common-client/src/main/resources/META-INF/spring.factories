@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.evotek.common.config.security.impl.RemoteClientService, \
+com.evotek.common.client.iam.IAMClientFallback, \
+com.evotek.common.config.FeignClientConfiguration, \
