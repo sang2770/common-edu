@@ -1,7 +1,7 @@
 package com.sang.commonweb.security;
 
-import com.sang.commonmodel.UserAuthentication;
-import com.sang.commonmodel.error.AuthorizationError;
+import com.sang.commonmodel.auth.UserAuthentication;
+import com.sang.commonmodel.error.enums.AuthorizationError;
 import com.sang.commonmodel.exception.ResponseException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.PermissionEvaluator;

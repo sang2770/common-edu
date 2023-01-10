@@ -1,5 +1,6 @@
 package com.sang.commonmodel.validator;
 
+import com.sang.commonmodel.validator.anotations.ValidateUUID;
 import lombok.extern.log4j.Log4j2;
 
 import javax.validation.ConstraintValidator;

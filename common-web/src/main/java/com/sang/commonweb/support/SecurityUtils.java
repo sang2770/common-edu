@@ -1,7 +1,7 @@
 package com.sang.commonweb.support;
 
-import com.sang.commonmodel.UserAuthentication;
-import com.sang.commonmodel.error.AuthenticationError;
+import com.sang.commonmodel.auth.UserAuthentication;
+import com.sang.commonmodel.error.enums.AuthenticationError;
 import com.sang.commonmodel.exception.ResponseException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

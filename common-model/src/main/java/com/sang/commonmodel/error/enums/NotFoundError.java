@@ -1,15 +1,18 @@
-package com.sang.commonmodel.error;
+package com.sang.commonmodel.error.enums;
 
-public enum AuthorizationError implements ResponseError {
+import com.sang.commonmodel.error.ResponseError;
+import lombok.Getter;
 
-    ACCESS_DENIED(40300001, "Access Denied"),
-    NOT_SUPPORTED_AUTHENTICATION(40300002, "Your authentication has not been supported yet"),
+@Getter
+public enum NotFoundError implements ResponseError {
+    NOT_FOUND(40400001, "Not found"),
+    USER_NOT_FOUND(40400002, "User not found: {0}"),
     ;
 
     private final Integer code;
     private final String message;
 
-    AuthorizationError(Integer code, String message) {
+    NotFoundError(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
@@ -26,7 +29,7 @@ public enum AuthorizationError implements ResponseError {
 
     @Override
     public int getStatus() {
-        return 403;
+        return 404;
     }
 
     @Override

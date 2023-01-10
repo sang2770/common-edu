@@ -1,4 +1,6 @@
-package com.sang.commonmodel.error;
+package com.sang.commonmodel.error.enums;
+
+import com.sang.commonmodel.error.ResponseError;
 
 public enum AuthenticationError implements ResponseError {
     UNKNOWN(40100001, "UNKNOWN"),

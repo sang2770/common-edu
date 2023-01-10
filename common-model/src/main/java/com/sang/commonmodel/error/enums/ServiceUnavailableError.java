@@ -1,4 +1,6 @@
-package com.sang.commonmodel.error;
+package com.sang.commonmodel.error.enums;
+
+import com.sang.commonmodel.error.ResponseError;
 
 public enum ServiceUnavailableError implements ResponseError {
     SERVICE_UNAVAILABLE_ERROR(50300001, "Service unavailable"),

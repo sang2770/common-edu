@@ -1,4 +1,4 @@
-package com.sang.commonmodel;
+package com.sang.commonmodel.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

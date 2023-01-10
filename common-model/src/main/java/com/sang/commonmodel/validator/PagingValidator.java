@@ -2,6 +2,7 @@ package com.sang.commonmodel.validator;
 
 
 import com.sang.commonmodel.dto.request.PagingRequest;
+import com.sang.commonmodel.validator.anotations.ValidatePaging;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -2,7 +2,7 @@ package com.sang.commonweb.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sang.commonmodel.dto.error.ErrorResponse;
-import com.sang.commonmodel.error.AuthenticationError;
+import com.sang.commonmodel.error.enums.AuthenticationError;
 import com.sang.commonweb.i18n.LocaleStringService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;

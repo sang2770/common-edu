@@ -1,4 +1,4 @@
-package com.sang.commonmodel.validator;
+package com.sang.commonmodel.validator.enums;
 
 public interface ValidateConstraint {
 

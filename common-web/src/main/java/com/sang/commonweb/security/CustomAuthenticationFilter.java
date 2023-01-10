@@ -1,7 +1,7 @@
 package com.sang.commonweb.security;
 
-import com.sang.commonmodel.UserAuthentication;
-import com.sang.commonmodel.UserAuthority;
+import com.sang.commonmodel.auth.UserAuthentication;
+import com.sang.commonmodel.auth.UserAuthority;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.AbstractAuthenticationToken;

@@ -1,4 +1,6 @@
-package com.sang.commonmodel.error;
+package com.sang.commonmodel.error.enums;
+
+import com.sang.commonmodel.error.ResponseError;
 
 public enum InternalServerError implements ResponseError {
     INTERNAL_SERVER_ERROR(50000001, "There are somethings wrong"),

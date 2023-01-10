@@ -1,5 +1,6 @@
-package com.sang.commonmodel.error;
+package com.sang.commonmodel.error.enums;
 
+import com.sang.commonmodel.error.ResponseError;
 import lombok.Getter;
 
 @Getter

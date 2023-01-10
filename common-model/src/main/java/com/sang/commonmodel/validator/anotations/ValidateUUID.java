@@ -1,4 +1,6 @@
-package com.sang.commonmodel.validator;
+package com.sang.commonmodel.validator.anotations;
+
+import com.sang.commonmodel.validator.IdValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
