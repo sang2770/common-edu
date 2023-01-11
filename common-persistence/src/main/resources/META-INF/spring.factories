@@ -1,3 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.evotek.common.persistence.config.JpaDatabaseAutoConfiguration, \
-com.evotek.common.persistence.support.SeqRepositoryImpl
+com.sang.commonpersistence.config.JpaDatabaseAutoConfiguration

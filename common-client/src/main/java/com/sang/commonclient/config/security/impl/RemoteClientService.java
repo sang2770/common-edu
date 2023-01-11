@@ -2,6 +2,8 @@ package com.sang.commonclient.config.security.impl;
 
 import com.sang.commonclient.client.iam.IAMClient;
 import com.sang.commonclient.config.security.ClientAuthentication;
+import com.sang.commonclient.request.iam.ClientLoginRequest;
+import com.sang.commonmodel.dto.response.Response;
 import com.sang.commonmodel.dto.response.iam.ClientToken;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Lazy;
@@ -20,10 +22,10 @@ public class RemoteClientService implements ClientAuthentication {
             condition = "#clientId != null", unless = "#clientId == null || #result == null")
     @Override
     public ClientToken getClientToken(String clientId, String clientSecret) {
-//        Response<ClientToken> clientTokenResponse = iamClient.getTokenClient(new ClientLoginRequest(clientId, clientSecret));
-//        if (clientTokenResponse.isSuccess() && clientTokenResponse.getData() != null) {
-//            return clientTokenResponse.getData();
-//        }
+        Response<ClientToken> clientTokenResponse = iamClient.getTokenClient(new ClientLoginRequest(clientId, clientSecret));
+        if (clientTokenResponse.isSuccess() && clientTokenResponse.getData() != null) {
+            return clientTokenResponse.getData();
+        }
         return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.sang.commonclient.client.iam;
 
+import com.sang.commonclient.request.iam.ClientLoginRequest;
 import com.sang.commonmodel.auth.UserAuthority;
 import com.sang.commonmodel.dto.request.PagingRequest;
 import com.sang.commonmodel.dto.response.PagingResponse;
@@ -44,6 +45,15 @@ public class IAMClientFallback implements FallbackFactory<IAMClient> {
         @Override
         public Response<UserAuthority> getClientAuthority() {
             log.error("Get user authorities {} err", cause);
+            if (cause instanceof ForwardInnerAlertException) {
+                return Response.fail((RuntimeException) cause);
+            }
+            return Response.fail(new ResponseException(ServiceUnavailableError.IAM_SERVICE_UNAVAILABLE_ERROR));
+        }
+
+        @Override
+        public Response<ClientToken> getTokenClient(ClientLoginRequest request) {
+            log.error("Client login {} error", request.getClientId(), cause);
             if (cause instanceof ForwardInnerAlertException) {
                 return Response.fail((RuntimeException) cause);
             }

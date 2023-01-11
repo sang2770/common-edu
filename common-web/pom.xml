@@ -55,6 +55,11 @@
             <artifactId>common-model</artifactId>
             <version>${common.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sang</groupId>
+            <artifactId>common-client</artifactId>
+            <version>${common.version}</version>
+        </dependency>
         <!--        -->
         <!--        security-->
         <dependency>
