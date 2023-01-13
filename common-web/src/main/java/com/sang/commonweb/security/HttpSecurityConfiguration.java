@@ -85,8 +85,11 @@ public class HttpSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/**").authenticated()
                 .and()
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+//        Kiểm tra có token hay k
         http.addFilterBefore(jwtRequestParamFilter(), BearerTokenAuthenticationFilter.class);
-//        http.addFilterAfter(forbiddenTokenFilter, BearerTokenAuthenticationFilter.class);
+//        Kiểm tra cache token fail
+        http.addFilterAfter(forbiddenTokenFilter, BearerTokenAuthenticationFilter.class);
+//        Kiêm tra auth token
         http.addFilterAfter(customAuthenticationFilter, BearerTokenAuthenticationFilter.class);
 
         // @formatter:on

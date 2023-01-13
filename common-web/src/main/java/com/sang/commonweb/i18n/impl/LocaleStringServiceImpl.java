@@ -22,7 +22,7 @@ public class LocaleStringServiceImpl implements LocaleStringService {
 
     @Autowired
     public LocaleStringServiceImpl(
-            @Qualifier("messageResourceAMC") MessageSource messageSource) {
+            @Qualifier("messageResourceSang") MessageSource messageSource) {
         this.messageSource = messageSource;
     }
 
