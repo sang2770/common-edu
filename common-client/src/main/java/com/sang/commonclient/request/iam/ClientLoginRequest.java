@@ -2,7 +2,7 @@ package com.sang.commonclient.request.iam;
 
 
 import com.sang.commonmodel.dto.request.Request;
-import com.sang.commonmodel.validator.enums.ValidateConstraint;
+import com.sang.commonmodel.validator.ValidateConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

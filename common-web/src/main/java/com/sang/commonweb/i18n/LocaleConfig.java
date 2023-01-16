@@ -35,7 +35,7 @@ public class LocaleConfig extends AcceptHeaderLocaleResolver implements WebMvcCo
         setSupportedLocales(new ArrayList<>(SUPPORT_LOCALES.values()));
     }
 
-    @Bean(name = "messageResourceAMC")
+    @Bean(name = "messageResourceSang")
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageResource = new ReloadableResourceBundleMessageSource();
         messageResource.setBasenames("classpath:i18n/messages");

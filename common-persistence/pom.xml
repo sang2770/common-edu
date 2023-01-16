@@ -12,11 +12,25 @@
     <description>common-persistence</description>
     <properties>
         <java.version>11</java.version>
+        <common.version>0.0.1-SNAPSHOT</common.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sang</groupId>
+            <artifactId>common-model</artifactId>
+            <version>${common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sang</groupId>
+            <artifactId>common-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
