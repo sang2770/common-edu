@@ -82,7 +82,7 @@ public class HttpSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/client/authenticate").permitAll()
                 .antMatchers("/swagger-*/**").permitAll()
                 .antMatchers("/v2/api-docs").permitAll()
-//                .antMatchers("/api/**").authenticated()
+                .antMatchers("/api/**").authenticated()
                 .and()
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
 //        Kiểm tra có token hay k

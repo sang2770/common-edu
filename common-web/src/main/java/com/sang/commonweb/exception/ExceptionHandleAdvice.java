@@ -516,4 +516,16 @@ public class ExceptionHandleAdvice {
                         .code(e.getResponse().getCode())
                         .build());
     }
+
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<ErrorResponse<Void>> handleIOException(
+            ForwardInnerAlertException e, HttpServletRequest request) {
+        log.warn("Failed to handle request " + request.getRequestURI() + ": " + e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse.<Void>builder()
+                        .error(e.getResponse().getError())
+                        .message(e.getResponse().getMessage())
+                        .code(e.getResponse().getCode())
+                        .build());
+    }
 }

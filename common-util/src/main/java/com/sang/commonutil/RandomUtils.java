@@ -3,9 +3,6 @@ package com.sang.commonutil;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.security.SecureRandom;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -29,9 +26,6 @@ public final class RandomUtils {
         return RandomStringUtils.randomAlphanumeric(DEF_COUNT);
     }
 
-    public static String generateSalt() {
-        return RandomStringUtils.randomAlphanumeric(SALT_COUNT);
-    }
 
     public static String generateActivationKey() {
         return RandomStringUtils.randomNumeric(DEF_COUNT);
@@ -45,15 +39,4 @@ public final class RandomUtils {
         return RandomStringUtils.randomNumeric(DEF_COUNT);
     }
 
-    public static Long uniqueExternalID() {
-        long now = System.currentTimeMillis();
-        while (true) {
-            long lastTime = LAST_TIME_MS.get();
-            if (lastTime >= now)
-                now = lastTime + 1;
-            if (LAST_TIME_MS.compareAndSet(lastTime, now)) {
-                return Long.valueOf(new SimpleDateFormat(ID_DATETIME_PATTERN, Locale.US).format(new Date(now)));
-            }
-        }
-    }
 }

@@ -20,6 +20,7 @@
         <module>common-persistence</module>
         <module>common-util</module>
         <module>common-client</module>
+        <module>common-cache</module>
     </modules>
     <properties>
         <maven.version>3.3.9</maven.version>
