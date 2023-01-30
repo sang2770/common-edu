@@ -19,7 +19,7 @@ public class RemoteClientService implements ClientAuthentication {
     }
 
     @Cacheable(cacheNames = "client-token", key = "#clientId",
-            condition = "#clientId != null", unless = "#clientId == null || #result == null")
+            condition = "#clientId != null")
     @Override
     public ClientToken getClientToken(String clientId, String clientSecret) {
         Response<ClientToken> clientTokenResponse = iamClient.getTokenClient(new ClientLoginRequest(clientId, clientSecret));

@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.sang.commonclient.config.security.impl.RemoteClientService,\
 com.sang.commonclient.client.iam.IAMClientFallback,\
+com.sang.commonclient.client.storage.StorageClientFallBack,\
 com.sang.commonclient.config.FeignClientConfiguration
