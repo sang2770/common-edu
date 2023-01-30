@@ -11,7 +11,7 @@ public class SafeSqlInterceptor extends EmptyInterceptor {
 
     @Override
     public String onPrepareStatement(String sql) {
-        sql = this.rewriteSqlLike(sql);
+//        sql = this.rewriteSqlLike(sql);
         return super.onPrepareStatement(sql);
     }
 

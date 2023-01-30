@@ -5,10 +5,7 @@ import com.sang.commonmodel.error.ResponseError;
 public enum ServiceUnavailableError implements ResponseError {
     SERVICE_UNAVAILABLE_ERROR(50300001, "Service unavailable"),
     IAM_SERVICE_UNAVAILABLE_ERROR(50300002, "IAM Service unavailable"),
-    BUILDING_SERVICE_UNAVAILABLE_ERROR(50300003, "Building Service unavailable"),
-    STORAGE_SERVICE_UNAVAILABLE_ERROR(50300004, "Storage Service unavailable"),
-    NOTIFICATION_SERVICE_UNAVAILABLE_ERROR(50300005, "Notification Service unavailable"),
-    SYSTEM_SERVICE_UNAVAILABLE_ERROR(50300006, "System Service unavailable"),
+    STORAGE_SERVICE_UNAVAILABLE_ERROR(50300003, "Storage Service unavailable"),
     ;
 
     private final Integer code;
