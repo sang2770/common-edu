@@ -71,7 +71,7 @@ public class HttpSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/public/**").permitAll()
                 .antMatchers("/api/files/download-ios-app").permitAll()
                 .antMatchers("/api/certificate/.well-known/jwks.json").permitAll()
-                .antMatchers("/api/authenticate").permitAll()
+                .antMatchers("/api/account/authenticate").permitAll()
                 .antMatchers("/api/refresh-token").permitAll()
                 .antMatchers("/api/authenticate/**").permitAll()
                 .antMatchers("/api/register").permitAll()
