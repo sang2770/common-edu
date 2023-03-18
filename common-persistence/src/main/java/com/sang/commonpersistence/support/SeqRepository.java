@@ -15,8 +15,24 @@ public interface SeqRepository {
     }
 
     @Transactional
-    default String generateCustomerTicketCode() {
+    default String generateRoomCode() {
         int year = LocalDate.now().getYear();
-        return nextValue(Const.TICKET_CUSTOMER.getPrefix() + year, Const.TICKET_CUSTOMER.getSeqName());
+        return nextValue(Const.ROOM.getPrefix() + year, Const.ROOM.getSeqName());
+    }
+    @Transactional
+    default String generateClassesCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.CLASSES.getPrefix() + year, Const.CLASSES.getSeqName());
+    }
+    @Transactional
+    default String generateDepartmentCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.DEPARTMENT.getPrefix() + year, Const.DEPARTMENT.getSeqName());
+    }
+
+    @Transactional
+    default String generatePeriodCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.DEPARTMENT.getPrefix() + year, Const.DEPARTMENT.getSeqName());
     }
 }

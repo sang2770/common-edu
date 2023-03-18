@@ -11,7 +11,7 @@ public class SafeSqlInterceptor extends EmptyInterceptor {
 
     @Override
     public String onPrepareStatement(String sql) {
-//        sql = this.rewriteSqlLike(sql);
+        sql = this.rewriteSqlLike(sql);
         return super.onPrepareStatement(sql);
     }
 
@@ -28,7 +28,7 @@ public class SafeSqlInterceptor extends EmptyInterceptor {
                 fieldName = fieldName.substring(1);
                 transformedInExpression.append(" ( ");
             }
-            transformedInExpression.append(" f_unaccent(lower(").append(fieldName).append(")) like ?");
+            transformedInExpression.append(" public.f_unaccent(lower(").append(fieldName).append(")) like ?");
 
             sql = sql.replaceFirst(Pattern.quote(likeExpression), transformedInExpression.toString());
         }

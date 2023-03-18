@@ -1,2 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.sang.commonpersistence.config.JpaDatabaseAutoConfiguration
+com.sang.commonpersistence.config.JpaDatabaseAutoConfiguration,\
+com.sang.commonpersistence.support.SeqRepositoryImpl
+
