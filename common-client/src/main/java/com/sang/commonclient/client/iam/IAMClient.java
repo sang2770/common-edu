@@ -1,8 +1,10 @@
 package com.sang.commonclient.client.iam;
 
 
+import com.sang.commonclient.domain.UserDTO;
 import com.sang.commonclient.request.iam.ClientLoginRequest;
 import com.sang.commonmodel.auth.UserAuthority;
+import com.sang.commonmodel.dto.request.FindByIdsRequest;
 import com.sang.commonmodel.dto.response.Response;
 import com.sang.commonmodel.dto.response.iam.ClientToken;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @LoadBalancerClient(name = "iam")
 @FeignClient(name = "iam", fallbackFactory = IAMClientFallback.class)
@@ -33,6 +36,11 @@ public interface IAMClient {
     @PostMapping("/api/client/authenticate")
     @LoadBalanced
     Response<ClientToken> getTokenClient(@RequestBody @Valid ClientLoginRequest request);
+
+
+    @PostMapping("/api/users/find-by-ids")
+    @LoadBalanced
+    Response<List<UserDTO>> getUserByIds(@RequestBody FindByIdsRequest request);
 
 
 }
