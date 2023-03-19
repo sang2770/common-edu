@@ -25,6 +25,24 @@ public interface SeqRepository {
         return nextValue(Const.CLASSES.getPrefix() + year, Const.CLASSES.getSeqName());
     }
     @Transactional
+    default String generateRoleCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.ROLE.getPrefix() + year, Const.ROLE.getSeqName());
+    }
+
+    @Transactional
+    default String generateGroupQuestionCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.GROUP_QUESTION.getPrefix() + year, Const.GROUP_QUESTION.getSeqName());
+    }
+
+    @Transactional
+    default String generateQuestionCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.QUESTION.getPrefix() + year, Const.QUESTION.getSeqName());
+    }
+
+    @Transactional
     default String generateDepartmentCode() {
         int year = LocalDate.now().getYear();
         return nextValue(Const.DEPARTMENT.getPrefix() + year, Const.DEPARTMENT.getSeqName());

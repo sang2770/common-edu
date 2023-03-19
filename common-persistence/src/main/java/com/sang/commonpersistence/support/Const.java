@@ -4,7 +4,10 @@ public enum Const {
     ROOM("R", "ROOM_SEQ"),
     CLASSES("CL", "CLASS_SEQ"),
     DEPARTMENT("DE", "DEPARTMENT_SEQ"),
+    ROLE("RO", "ROLE_SEQ"),
     PERIOD("PE", "PERIOD_SEQ"),
+    QUESTION("QE", "QUESTION_SEQ"),
+    GROUP_QUESTION("GRO_QUE", "GRO_QUE_SEQ"),
     EXAM("EX", "EXAM_SEQ"),
     TEST("TE", "TEST_SEQ")
     ;

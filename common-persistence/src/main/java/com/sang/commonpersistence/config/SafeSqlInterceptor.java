@@ -28,7 +28,7 @@ public class SafeSqlInterceptor extends EmptyInterceptor {
                 fieldName = fieldName.substring(1);
                 transformedInExpression.append(" ( ");
             }
-            transformedInExpression.append(" public.f_unaccent(lower(").append(fieldName).append(")) like ?");
+            transformedInExpression.append(" lower(").append(fieldName).append(") like ?");
 
             sql = sql.replaceFirst(Pattern.quote(likeExpression), transformedInExpression.toString());
         }
