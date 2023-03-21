@@ -31,6 +31,12 @@ public interface SeqRepository {
     }
 
     @Transactional
+    default String generateSubjectCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.SUBJECT.getPrefix() + year, Const.SUBJECT.getSeqName());
+    }
+
+    @Transactional
     default String generateGroupQuestionCode() {
         int year = LocalDate.now().getYear();
         return nextValue(Const.GROUP_QUESTION.getPrefix() + year, Const.GROUP_QUESTION.getSeqName());
