@@ -37,6 +37,12 @@ public interface SeqRepository {
     }
 
     @Transactional
+    default String generateUserExamCode() {
+        int year = LocalDate.now().getYear();
+        return nextValue(Const.USER_EXAM.getPrefix() + year, Const.USER_EXAM.getSeqName());
+    }
+
+    @Transactional
     default String generateGroupQuestionCode() {
         int year = LocalDate.now().getYear();
         return nextValue(Const.GROUP_QUESTION.getPrefix() + year, Const.GROUP_QUESTION.getSeqName());
