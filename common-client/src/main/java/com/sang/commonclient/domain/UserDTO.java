@@ -2,6 +2,7 @@ package com.sang.commonclient.domain;
 
 import com.sang.commonmodel.domain.AuditableDomain;
 import com.sang.commonmodel.enums.UserStatus;
+import com.sang.commonmodel.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,4 +35,5 @@ public class UserDTO extends AuditableDomain {
     private String avatarFileViewUrl;
     private Instant lastAuthChangeAt;
     private String classId;
+    private UserType userType;
 }
