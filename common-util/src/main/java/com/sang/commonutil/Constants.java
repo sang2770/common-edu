@@ -17,6 +17,9 @@ public interface Constants {
     String REFRESH_TOKEN = "refresh_token";
     String CLIENT_AUTHORITY = "client";
 
+    String DATE_TIME_FILE_RESULT = "yyyyMMddHHmmss";
+    String ATTACHMENT_FILE = "attachment;filename=";
+
     static List<String> getValidExtensions() {
         return EXTENSIONS;
     }
