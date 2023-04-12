@@ -1,6 +1,7 @@
 package com.sang.commonweb.security;
 
 import com.sang.commonmodel.auth.UserAuthentication;
+import com.sang.commonmodel.auth.UserAuthenticationCmd;
 import com.sang.commonmodel.auth.UserAuthority;
 import com.sang.commonmodel.error.enums.AuthenticationError;
 import com.sang.commonmodel.exception.ResponseException;
@@ -89,13 +90,16 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
         }
 
         User principal = new User(authentication.getName(), "", grantedPermissions);
-        AbstractAuthenticationToken auth = new UserAuthentication(principal,
-                token,
-                grantedPermissions,
-                isRoot,
-                isClient,
-                userId,
-                token.getTokenValue());
+        UserAuthenticationCmd userAuthenticationCmd = UserAuthenticationCmd.builder()
+                .principal(principal)
+                .isClient(isClient)
+                .isRoot(isRoot)
+                .userId(userId)
+                .token(token.getTokenValue())
+                .credentials(token)
+                .authorities(grantedPermissions)
+                .build();
+        AbstractAuthenticationToken auth = new UserAuthentication(userAuthenticationCmd);
 
         SecurityContextHolder.getContext().setAuthentication(auth);
         filterChain.doFilter(request, response);
