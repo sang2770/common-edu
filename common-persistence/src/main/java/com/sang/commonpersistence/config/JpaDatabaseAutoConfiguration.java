@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.util.Map;
 
 @Configuration
-@EnableJpaRepositories("com.sang.*.infrastructure.*")
+@EnableJpaRepositories("com.sang.*")
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
 public class JpaDatabaseAutoConfiguration implements HibernatePropertiesCustomizer {
