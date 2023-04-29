@@ -26,19 +26,14 @@ public class UserAuthentication extends UsernamePasswordAuthenticationToken {
 
     private final List<String> grantedPermissions;
 
-    public UserAuthentication(Object principal, Object credentials,
-                              Collection<? extends GrantedAuthority> authorities,
-                              Boolean isRoot,
-                              Boolean isClient,
-                              String userId,
-                              String token) {
-        super(principal, credentials, authorities);
-        this.isRoot = isRoot != null && isRoot;
-        this.isClient = isClient != null && isClient;
-        this.userId = userId;
-        this.token = token;
-        this.grantedPermissions = CollectionUtils.isEmpty(authorities) ? new ArrayList<>()
-                : authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
+    public UserAuthentication(UserAuthenticationCmd cmd) {
+        super(cmd.getPrincipal(), cmd.getCredentials(), cmd.getAuthorities());
+        this.isRoot = cmd.isRoot != null && cmd.isRoot;
+        this.isClient = cmd.isClient != null && cmd.isClient;
+        this.userId = cmd.userId;
+        this.token = cmd.token;
+        this.grantedPermissions = CollectionUtils.isEmpty(cmd.authorities) ? new ArrayList<>()
+                : cmd.authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
     }
 
     public boolean isRoot() {
