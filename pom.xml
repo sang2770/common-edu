@@ -21,6 +21,8 @@
         <module>common-util</module>
         <module>common-client</module>
         <module>common-cache</module>
+        <module>common-email</module>
+        <module>common-captcha</module>
     </modules>
     <properties>
         <maven.version>3.3.9</maven.version>

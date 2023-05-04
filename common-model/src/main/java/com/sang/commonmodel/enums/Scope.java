@@ -6,9 +6,10 @@ public enum Scope {
     UPDATE,
     DELETE,
     REVIEW,
-    AUDIT,
-    RESOLVE,
-    REPORT,
-    APPROVE,
-    EXPORT
+
+//    For Room
+
+    UPDATE_USER,
+    SEND_EXAM
+
 }

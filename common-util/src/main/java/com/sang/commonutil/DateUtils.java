@@ -8,11 +8,13 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public final class DateUtils {
@@ -224,5 +226,57 @@ public final class DateUtils {
             //handle the exception according to your own situation
         }
         return diff + 1;
+    }
+    public static List<Month> getMonthByPeriod(ReportingPeriodType type) {
+        // quy 1
+        if (ReportingPeriodType.FIRST_QUARTER.equals(type)) {
+            return List.of(Month.JANUARY, Month.FEBRUARY, Month.MARCH);
+        }
+
+        // quy 2
+        if (ReportingPeriodType.SECOND_QUARTER.equals(type)) {
+            return List.of(Month.APRIL, Month.MAY, Month.JUNE);
+        }
+
+        // quy 3
+        if (ReportingPeriodType.THIRD_QUARTER.equals(type)) {
+            return List.of(Month.JULY, Month.AUGUST, Month.SEPTEMBER);
+        }
+
+        // quy 4
+        if (ReportingPeriodType.FOUR_QUARTER.equals(type)) {
+            return List.of(Month.OCTOBER, Month.NOVEMBER, Month.DECEMBER);
+        }
+
+        // 6 thang dau nam
+        if (ReportingPeriodType.FIRST_SIX_MONTH.equals(type)) {
+            return List.of(
+                    Month.JANUARY, Month.FEBRUARY, Month.MARCH, Month.APRIL, Month.MAY, Month.JUNE);
+        }
+
+        // 6 thang cuoi nam
+        if (ReportingPeriodType.LAST_SIX_MONTH.equals(type)) {
+            return List.of(
+                    Month.JULY,
+                    Month.AUGUST,
+                    Month.SEPTEMBER,
+                    Month.OCTOBER,
+                    Month.NOVEMBER,
+                    Month.DECEMBER);
+        }
+
+        return List.of(
+                Month.JANUARY,
+                Month.FEBRUARY,
+                Month.MARCH,
+                Month.APRIL,
+                Month.MAY,
+                Month.JUNE,
+                Month.JULY,
+                Month.AUGUST,
+                Month.SEPTEMBER,
+                Month.OCTOBER,
+                Month.NOVEMBER,
+                Month.DECEMBER);
     }
 }

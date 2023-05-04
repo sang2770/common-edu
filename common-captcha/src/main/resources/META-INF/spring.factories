@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.sang.common.captcha.service.impl.CaptchaServiceImpl, \
+com.sang.common.captcha.service.impl.LoginAttemptServiceImpl, \
+com.sang.common.captcha.repository.impl.CaptchaRepositoryImpl, \
+com.sang.common.captcha.repository.impl.LoginFailedRepositoryImpl, \
+com.sang.common.captcha.config.CaptchaProperties

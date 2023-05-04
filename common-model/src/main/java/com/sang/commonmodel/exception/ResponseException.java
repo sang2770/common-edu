@@ -13,6 +13,10 @@ public class ResponseException extends RuntimeException {
         this(error.getMessage(), null, error);
     }
 
+    public ResponseException(ResponseError error, Object... params) {
+        this(error.getMessage(), null, error, params);
+    }
+
     public ResponseException(String message, ResponseError error) {
         this(message, null, error);
     }
