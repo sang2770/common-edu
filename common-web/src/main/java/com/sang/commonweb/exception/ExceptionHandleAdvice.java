@@ -288,20 +288,22 @@ public class ExceptionHandleAdvice {
 
     @ExceptionHandler(ResponseException.class)
     public ResponseEntity<ErrorResponse<Object>> handleResponseException(ResponseException e, HttpServletRequest request) {
-        log.warn("Failed to handle request {}: {}", request.getRequestURI(), e.getError().getMessage(), e);
+        log.warn("xxx");
+        log.warn("Failed to handle request {}: {} - {}", request.getRequestURI(), e.getError().getMessage(), e.getParams().toString());
         ResponseError error = e.getError();
         String message = localeStringService.getMessage(error.getName(), e.getError().getMessage(), e.getParams());
         return ResponseEntity.status(error.getStatus())
                 .body(ErrorResponse.builder()
                         .code(error.getCode())
                         .error(error.getName())
+                        .data(e.getParams())
                         .message(message)
                         .build());
     }
 
     @ExceptionHandler(InvocationTargetException.class)
     public ResponseEntity<ErrorResponse<Void>> handleResponseException(InvocationTargetException e, HttpServletRequest request) {
-        log.warn("Failed to handle request {}: {}", request.getRequestURI(), e.getMessage(), e);
+        log.warn("Failed to handle request xxx {}: {}", request.getRequestURI(), e.getMessage(), e);
         ResponseError error = InternalServerError.INTERNAL_SERVER_ERROR;
         log.error("Failed to handle request " + request.getRequestURI() + ": " + error.getMessage(), e);
         String msg = localeStringService.getMessage(
